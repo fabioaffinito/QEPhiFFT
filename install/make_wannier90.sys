@@ -1,0 +1,9 @@
+#=======================================
+# WANNIER90 	
+#=======================================
+
+F90=mpif90
+FCOPTS=$(FFLAGS) -nomodule 
+LDOPTS=-static-intel 
+
+LIBS =  -L/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/lib/intel64 -lmkl_intel_lp64  -lmkl_sequential -lmkl_core 

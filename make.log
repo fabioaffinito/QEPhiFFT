@@ -1,0 +1,975 @@
+test -d bin || mkdir bin
+cd install ; make -f extlibs_makefile libiotk
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+if test ! -d ../S3DE; then \
+(gzip -dc ../archive/iotk-1.2.beta.tar.gz | (cd ../; tar -xvf -)) ; \
+if test -e Makefile_iotk; then \
+        (cp Makefile_iotk ../S3DE/iotk/src/Makefile); fi; \
+if test -e iotk_config.h; then \
+(cp iotk_config.h ../S3DE/iotk/include/iotk_config.h); fi; fi
+cd ../S3DE/iotk/src; make lib+util; 
+make[2]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/S3DE/iotk/src'
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_error_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_misc_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_str_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+CHARACTER1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_fmt_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_xtox_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX1_0.f90
+iotk_attr+COMPLEX1_0.f90(131): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+    read(string(pos+1:pos1-1),"(G100.95)",iostat=iostat) tmpreal
+---------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX2_0.f90
+iotk_attr+COMPLEX2_0.f90(131): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+    read(string(pos+1:pos1-1),"(G100.95)",iostat=iostat) tmpreal
+---------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+COMPLEX4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER2_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+INTEGER4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL2_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+LOGICAL4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL1_0.f90
+iotk_attr+REAL1_0.f90(129): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+    read( string(pos+1:pos1-1), "(G100.95)",iostat=iostat) val(index)
+-----------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL2_0.f90
+iotk_attr+REAL2_0.f90(129): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+    read( string(pos+1:pos1-1), "(G100.95)",iostat=iostat) val(index)
+-----------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_attr+REAL4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_scan_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_stream_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_unit_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_write_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+CHARACTER1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+CHARACTER1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+CHARACTER1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX2_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+COMPLEX4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER2_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+INTEGER4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL2_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+LOGICAL4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL1_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL1_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL1_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL2_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL2_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL2_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL3_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL3_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL3_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL4_0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL4_3.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_dat+REAL4_6.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_error.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_files_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_files.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_fmt.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_misc.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_tool_interf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_module.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_scan.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_stream.f90
+iotk_stream.f90(42): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_LOGICAL1(unit,header,val,setpos,getpos,noval,ierr)
+-------------------------------------------------^
+iotk_stream.f90(406): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_INTEGER1(unit,header,val,setpos,getpos,noval,ierr)
+-------------------------------------------------^
+iotk_stream.f90(770): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_REAL1(unit,header,val,setpos,getpos,noval,ierr)
+----------------------------------------------^
+iotk_stream.f90(861): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_REAL2(unit,header,val,setpos,getpos,noval,ierr)
+----------------------------------------------^
+iotk_stream.f90(1134): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_COMPLEX1(unit,header,val,setpos,getpos,noval,ierr)
+-------------------------------------------------^
+iotk_stream.f90(1225): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_COMPLEX2(unit,header,val,setpos,getpos,noval,ierr)
+-------------------------------------------------^
+iotk_stream.f90(1498): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+subroutine iotk_stream_read_CHARACTER1(unit,header,val,setpos,getpos,noval,ierr)
+---------------------------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_str.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_tool.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_unit_list.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_unit.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_write.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_xtox.f90
+ar ruv libiotk.a iotk_attr+CHARACTER1_0.o iotk_attr+COMPLEX1_0.o iotk_attr+COMPLEX1_3.o iotk_attr+COMPLEX1_6.o iotk_attr+COMPLEX2_0.o iotk_attr+COMPLEX2_3.o iotk_attr+COMPLEX2_6.o iotk_attr+COMPLEX3_0.o iotk_attr+COMPLEX3_3.o iotk_attr+COMPLEX3_6.o iotk_attr+COMPLEX4_0.o iotk_attr+COMPLEX4_3.o iotk_attr+COMPLEX4_6.o iotk_attr.o iotk_attr+INTEGER1_0.o iotk_attr+INTEGER1_3.o iotk_attr+INTEGER1_6.o iotk_attr+INTEGER2_0.o iotk_attr+INTEGER2_3.o iotk_attr+INTEGER2_6.o iotk_attr+INTEGER3_0.o iotk_attr+INTEGER3_3.o iotk_attr+INTEGER3_6.o iotk_attr+INTEGER4_0.o iotk_attr+INTEGER4_3.o iotk_attr+INTEGER4_6.o iotk_attr_interf.o iotk_attr+LOGICAL1_0.o iotk_attr+LOGICAL1_3.o iotk_attr+LOGICAL1_6.o iotk_attr+LOGICAL2_0.o iotk_attr+LOGICAL2_3.o iotk_attr+LOGICAL2_6.o iotk_attr+LOGICAL3_0.o iotk_attr+LOGICAL3_3.o iotk_attr+LOGICAL3_6.o iotk_attr+LOGICAL4_0.o iotk_attr+LOGICAL4_3.o iotk_attr+LOGICAL4_6.o iotk_attr+REAL1_0.o iotk_attr+REAL1_3.o iotk_attr+REAL1_6.o iotk_attr+REAL2_0.o iotk_attr+REAL2_3.o iotk_attr+REAL2_6.o iotk_attr+REAL3_0.o iotk_attr+REAL3_3.o iotk_attr+REAL3_6.o iotk_attr+REAL4_0.o iotk_attr+REAL4_3.o iotk_attr+REAL4_6.o iotk_base.o iotk_dat+CHARACTER1_0.o iotk_dat+CHARACTER1_3.o iotk_dat+CHARACTER1_6.o iotk_dat+COMPLEX1_0.o iotk_dat+COMPLEX1_3.o iotk_dat+COMPLEX1_6.o iotk_dat+COMPLEX2_0.o iotk_dat+COMPLEX2_3.o iotk_dat+COMPLEX2_6.o iotk_dat+COMPLEX3_0.o iotk_dat+COMPLEX3_3.o iotk_dat+COMPLEX3_6.o iotk_dat+COMPLEX4_0.o iotk_dat+COMPLEX4_3.o iotk_dat+COMPLEX4_6.o iotk_dat.o iotk_dat+INTEGER1_0.o iotk_dat+INTEGER1_3.o iotk_dat+INTEGER1_6.o iotk_dat+INTEGER2_0.o iotk_dat+INTEGER2_3.o iotk_dat+INTEGER2_6.o iotk_dat+INTEGER3_0.o iotk_dat+INTEGER3_3.o iotk_dat+INTEGER3_6.o iotk_dat+INTEGER4_0.o iotk_dat+INTEGER4_3.o iotk_dat+INTEGER4_6.o iotk_dat_interf.o iotk_dat+LOGICAL1_0.o iotk_dat+LOGICAL1_3.o iotk_dat+LOGICAL1_6.o iotk_dat+LOGICAL2_0.o iotk_dat+LOGICAL2_3.o iotk_dat+LOGICAL2_6.o iotk_dat+LOGICAL3_0.o iotk_dat+LOGICAL3_3.o iotk_dat+LOGICAL3_6.o iotk_dat+LOGICAL4_0.o iotk_dat+LOGICAL4_3.o iotk_dat+LOGICAL4_6.o iotk_dat+REAL1_0.o iotk_dat+REAL1_3.o iotk_dat+REAL1_6.o iotk_dat+REAL2_0.o iotk_dat+REAL2_3.o iotk_dat+REAL2_6.o iotk_dat+REAL3_0.o iotk_dat+REAL3_3.o iotk_dat+REAL3_6.o iotk_dat+REAL4_0.o iotk_dat+REAL4_3.o iotk_dat+REAL4_6.o iotk_error.o iotk_error_interf.o iotk_files.o iotk_files_interf.o iotk_fmt.o iotk_fmt_interf.o iotk_misc.o iotk_misc_interf.o iotk_module.o iotk_scan.o iotk_scan_interf.o iotk_stream.o iotk_stream_interf.o iotk_str.o iotk_str_interf.o iotk_tool.o iotk_tool_interf.o iotk_unit.o iotk_unit_interf.o iotk_unit_list.o iotk_write.o iotk_write_interf.o iotk_xtox.o iotk_xtox_interf.o
+ar: creating libiotk.a
+a - iotk_attr+CHARACTER1_0.o
+a - iotk_attr+COMPLEX1_0.o
+a - iotk_attr+COMPLEX1_3.o
+a - iotk_attr+COMPLEX1_6.o
+a - iotk_attr+COMPLEX2_0.o
+a - iotk_attr+COMPLEX2_3.o
+a - iotk_attr+COMPLEX2_6.o
+a - iotk_attr+COMPLEX3_0.o
+a - iotk_attr+COMPLEX3_3.o
+a - iotk_attr+COMPLEX3_6.o
+a - iotk_attr+COMPLEX4_0.o
+a - iotk_attr+COMPLEX4_3.o
+a - iotk_attr+COMPLEX4_6.o
+a - iotk_attr.o
+a - iotk_attr+INTEGER1_0.o
+a - iotk_attr+INTEGER1_3.o
+a - iotk_attr+INTEGER1_6.o
+a - iotk_attr+INTEGER2_0.o
+a - iotk_attr+INTEGER2_3.o
+a - iotk_attr+INTEGER2_6.o
+a - iotk_attr+INTEGER3_0.o
+a - iotk_attr+INTEGER3_3.o
+a - iotk_attr+INTEGER3_6.o
+a - iotk_attr+INTEGER4_0.o
+a - iotk_attr+INTEGER4_3.o
+a - iotk_attr+INTEGER4_6.o
+a - iotk_attr_interf.o
+a - iotk_attr+LOGICAL1_0.o
+a - iotk_attr+LOGICAL1_3.o
+a - iotk_attr+LOGICAL1_6.o
+a - iotk_attr+LOGICAL2_0.o
+a - iotk_attr+LOGICAL2_3.o
+a - iotk_attr+LOGICAL2_6.o
+a - iotk_attr+LOGICAL3_0.o
+a - iotk_attr+LOGICAL3_3.o
+a - iotk_attr+LOGICAL3_6.o
+a - iotk_attr+LOGICAL4_0.o
+a - iotk_attr+LOGICAL4_3.o
+a - iotk_attr+LOGICAL4_6.o
+a - iotk_attr+REAL1_0.o
+a - iotk_attr+REAL1_3.o
+a - iotk_attr+REAL1_6.o
+a - iotk_attr+REAL2_0.o
+a - iotk_attr+REAL2_3.o
+a - iotk_attr+REAL2_6.o
+a - iotk_attr+REAL3_0.o
+a - iotk_attr+REAL3_3.o
+a - iotk_attr+REAL3_6.o
+a - iotk_attr+REAL4_0.o
+a - iotk_attr+REAL4_3.o
+a - iotk_attr+REAL4_6.o
+a - iotk_base.o
+a - iotk_dat+CHARACTER1_0.o
+a - iotk_dat+CHARACTER1_3.o
+a - iotk_dat+CHARACTER1_6.o
+a - iotk_dat+COMPLEX1_0.o
+a - iotk_dat+COMPLEX1_3.o
+a - iotk_dat+COMPLEX1_6.o
+a - iotk_dat+COMPLEX2_0.o
+a - iotk_dat+COMPLEX2_3.o
+a - iotk_dat+COMPLEX2_6.o
+a - iotk_dat+COMPLEX3_0.o
+a - iotk_dat+COMPLEX3_3.o
+a - iotk_dat+COMPLEX3_6.o
+a - iotk_dat+COMPLEX4_0.o
+a - iotk_dat+COMPLEX4_3.o
+a - iotk_dat+COMPLEX4_6.o
+a - iotk_dat.o
+a - iotk_dat+INTEGER1_0.o
+a - iotk_dat+INTEGER1_3.o
+a - iotk_dat+INTEGER1_6.o
+a - iotk_dat+INTEGER2_0.o
+a - iotk_dat+INTEGER2_3.o
+a - iotk_dat+INTEGER2_6.o
+a - iotk_dat+INTEGER3_0.o
+a - iotk_dat+INTEGER3_3.o
+a - iotk_dat+INTEGER3_6.o
+a - iotk_dat+INTEGER4_0.o
+a - iotk_dat+INTEGER4_3.o
+a - iotk_dat+INTEGER4_6.o
+a - iotk_dat_interf.o
+a - iotk_dat+LOGICAL1_0.o
+a - iotk_dat+LOGICAL1_3.o
+a - iotk_dat+LOGICAL1_6.o
+a - iotk_dat+LOGICAL2_0.o
+a - iotk_dat+LOGICAL2_3.o
+a - iotk_dat+LOGICAL2_6.o
+a - iotk_dat+LOGICAL3_0.o
+a - iotk_dat+LOGICAL3_3.o
+a - iotk_dat+LOGICAL3_6.o
+a - iotk_dat+LOGICAL4_0.o
+a - iotk_dat+LOGICAL4_3.o
+a - iotk_dat+LOGICAL4_6.o
+a - iotk_dat+REAL1_0.o
+a - iotk_dat+REAL1_3.o
+a - iotk_dat+REAL1_6.o
+a - iotk_dat+REAL2_0.o
+a - iotk_dat+REAL2_3.o
+a - iotk_dat+REAL2_6.o
+a - iotk_dat+REAL3_0.o
+a - iotk_dat+REAL3_3.o
+a - iotk_dat+REAL3_6.o
+a - iotk_dat+REAL4_0.o
+a - iotk_dat+REAL4_3.o
+a - iotk_dat+REAL4_6.o
+a - iotk_error.o
+a - iotk_error_interf.o
+a - iotk_files.o
+a - iotk_files_interf.o
+a - iotk_fmt.o
+a - iotk_fmt_interf.o
+a - iotk_misc.o
+a - iotk_misc_interf.o
+a - iotk_module.o
+a - iotk_scan.o
+a - iotk_scan_interf.o
+a - iotk_stream.o
+a - iotk_stream_interf.o
+a - iotk_str.o
+a - iotk_str_interf.o
+a - iotk_tool.o
+a - iotk_tool_interf.o
+a - iotk_unit.o
+a - iotk_unit_interf.o
+a - iotk_unit_list.o
+a - iotk_write.o
+a - iotk_write_interf.o
+a - iotk_xtox.o
+a - iotk_xtox_interf.o
+ranlib libiotk.a
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk_print_kinds.f90
+make loclib_only
+make[3]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/S3DE/iotk/src'
+make[3]: Nothing to be done for `loclib_only'.
+make[3]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/S3DE/iotk/src'
+mpiifort -mmic -openmp -o iotk_print_kinds.x iotk_print_kinds.o libiotk.a   
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c iotk.f90
+make loclib_only
+make[3]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/S3DE/iotk/src'
+make[3]: Nothing to be done for `loclib_only'.
+make[3]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/S3DE/iotk/src'
+mpiifort -mmic -openmp -o iotk.x iotk.o libiotk.a   
+make[2]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/S3DE/iotk/src'
+cd ../bin; ln -fs ../S3DE/iotk/tools/iotk .; \
+ln -fs ../S3DE/iotk/src/iotk.x .; \
+ln -fs ../S3DE/iotk/src/iotk_print_kinds.x .; \
+cd ../; ln -fs S3DE/iotk iotk
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+cd install ; make -f extlibs_makefile libelpa
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+touch fake_libelpa.a
+rm fake_libelpa.a
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+( cd Modules ; make TLDEPS= all || exit 1 )
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/Modules'
+( if test -x ../install/update_version ; then \
+../install/update_version; \
+else if test ! -f version.f90 ; then \
+cat version.f90.in > version.f90 ; fi ; fi )	
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c version.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c kind.f90
+kind.f90(38): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+        WRITE( stdout,'(/,T2,A,T78,A,2(/,T2,A,T75,I6),3(/,T2,A,T67,E14.8))') &
+--------------------------------------------------------------------^
+kind.f90(44): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+        WRITE( stdout,'(/,T2,A,T78,A,2(/,T2,A,T75,I6),3(/,T2,A,T67,E14.8))') &
+--------------------------------------------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c constants.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c radial_grids.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c atom.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c parameters.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c wannier_new.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c input_parameters.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c io_global.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c parallel_include.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_world.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_images.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c parser.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c autopilot.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c basic_algebra_routines.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c control_flags.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_bands.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c noncol.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c recvec.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c becmod.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c cell_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c io_files.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c bfgs_module.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c bspline.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c bz_form.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c set_signal.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c check_stop.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c clocks.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c command_line_options.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fft_types.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fft_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c compute_dipole.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c random_numbers.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c ions_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c constraints_module.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c coulomb_vcut.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c descriptors.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_pools.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_diag.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c dspev_drv.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c electrons_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c environment.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c error_handler.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fd_gradient.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fft_scalar.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fft_custom.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fft_parallel.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c fft_interfaces.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c wrappers.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c kernel_table.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_pots.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_global.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c xc_rVV10.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c xc_vdW_DF.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c funct.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c generate_function.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c griddim.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c libxc_funcs.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c libxc.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mm_dispersion.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c mp_wave.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c open_close_input_file.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c paw_variables.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c plugin_flags.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c plugin_arguments.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c plugin_variables.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c pseudo_types.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c zhpev_drv.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c ptoolkit.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c qexml.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c qmmm.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c wypos.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_cards.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_namelists.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_xml_fields.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_xml_cards.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_xml.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c xml_io_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c xml_input.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_input.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_ncpp.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c uspp.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_uspp.f90
+read_uspp.f90(680): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+    read( iunps, '(2e17.11,i5)') &
+---------------------^
+read_uspp.f90(685): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+    read( iunps, '(4e17.11,i5)',err=100, iostat=ios ) &
+---------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_upf_v1.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_upf_v2.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c upf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c upf_to_internal.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c read_pseudo.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c recvec_subs.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c run_info.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c space_group.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c splinelib.f90
+mpiifort -mmic -O0 -assume byterecl -g -traceback -c stick_base.f90
+stick_base.f90(63): warning #5117: Bad # preprocessor line
+#if defined (__EKO)
+-^
+stick_base.f90(65): warning #5117: Bad # preprocessor line
+#endif
+-^
+stick_base.f90(318): warning #5117: Bad # preprocessor line
+#if defined __STICKS_DEBUG
+-^
+stick_base.f90(325): warning #5117: Bad # preprocessor line
+#endif
+-^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c stick_set.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c timestep.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c tsvdw.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c wannier_gw.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c wave_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c wavefunctions.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c write_upf_v2.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c ws_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../ELPA/src -I. -c zdotc_wrapper.f90
+ar ruv libqemod.a atom.o autopilot.o basic_algebra_routines.o becmod.o bfgs_module.o bspline.o bz_form.o cell_base.o check_stop.o clocks.o command_line_options.o compute_dipole.o constants.o constraints_module.o control_flags.o coulomb_vcut.o descriptors.o dspev_drv.o electrons_base.o environment.o error_handler.o fd_gradient.o fft_base.o fft_custom.o fft_interfaces.o fft_parallel.o fft_scalar.o fft_types.o funct.o generate_function.o griddim.o input_parameters.o io_files.o io_global.o ions_base.o kernel_table.o kind.o libxc.o libxc_funcs.o mm_dispersion.o mp.o mp_bands.o mp_base.o mp_diag.o mp_global.o mp_images.o mp_pots.o mp_pools.o mp_wave.o mp_world.o noncol.o open_close_input_file.o parallel_include.o parameters.o parser.o paw_variables.o plugin_flags.o plugin_arguments.o plugin_variables.o pseudo_types.o ptoolkit.o qexml.o qmmm.o radial_grids.o random_numbers.o read_cards.o read_input.o read_namelists.o read_ncpp.o read_pseudo.o read_upf_v1.o read_upf_v2.o read_uspp.o read_xml.o read_xml_cards.o read_xml_fields.o recvec.o recvec_subs.o run_info.o space_group.o set_signal.o splinelib.o stick_base.o stick_set.o timestep.o tsvdw.o upf.o upf_to_internal.o uspp.o version.o wannier_gw.o wannier_new.o wave_base.o wavefunctions.o wrappers.o write_upf_v2.o ws_base.o xc_vdW_DF.o xc_rVV10.o xml_input.o xml_io_base.o wypos.o zdotc_wrapper.o zhpev_drv.o       
+ar: creating libqemod.a
+a - atom.o
+a - autopilot.o
+a - basic_algebra_routines.o
+a - becmod.o
+a - bfgs_module.o
+a - bspline.o
+a - bz_form.o
+a - cell_base.o
+a - check_stop.o
+a - clocks.o
+a - command_line_options.o
+a - compute_dipole.o
+a - constants.o
+a - constraints_module.o
+a - control_flags.o
+a - coulomb_vcut.o
+a - descriptors.o
+a - dspev_drv.o
+a - electrons_base.o
+a - environment.o
+a - error_handler.o
+a - fd_gradient.o
+a - fft_base.o
+a - fft_custom.o
+a - fft_interfaces.o
+a - fft_parallel.o
+a - fft_scalar.o
+a - fft_types.o
+a - funct.o
+a - generate_function.o
+a - griddim.o
+a - input_parameters.o
+a - io_files.o
+a - io_global.o
+a - ions_base.o
+a - kernel_table.o
+a - kind.o
+a - libxc.o
+a - libxc_funcs.o
+a - mm_dispersion.o
+a - mp.o
+a - mp_bands.o
+a - mp_base.o
+a - mp_diag.o
+a - mp_global.o
+a - mp_images.o
+a - mp_pots.o
+a - mp_pools.o
+a - mp_wave.o
+a - mp_world.o
+a - noncol.o
+a - open_close_input_file.o
+a - parallel_include.o
+a - parameters.o
+a - parser.o
+a - paw_variables.o
+a - plugin_flags.o
+a - plugin_arguments.o
+a - plugin_variables.o
+a - pseudo_types.o
+a - ptoolkit.o
+a - qexml.o
+a - qmmm.o
+a - radial_grids.o
+a - random_numbers.o
+a - read_cards.o
+a - read_input.o
+a - read_namelists.o
+a - read_ncpp.o
+a - read_pseudo.o
+a - read_upf_v1.o
+a - read_upf_v2.o
+a - read_uspp.o
+a - read_xml.o
+a - read_xml_cards.o
+a - read_xml_fields.o
+a - recvec.o
+a - recvec_subs.o
+a - run_info.o
+a - space_group.o
+a - set_signal.o
+a - splinelib.o
+a - stick_base.o
+a - stick_set.o
+a - timestep.o
+a - tsvdw.o
+a - upf.o
+a - upf_to_internal.o
+a - uspp.o
+a - version.o
+a - wannier_gw.o
+a - wannier_new.o
+a - wave_base.o
+a - wavefunctions.o
+a - wrappers.o
+a - write_upf_v2.o
+a - ws_base.o
+a - xc_vdW_DF.o
+a - xc_rVV10.o
+a - xml_input.o
+a - xml_io_base.o
+a - wypos.o
+a - zdotc_wrapper.o
+a - zhpev_drv.o
+ranlib libqemod.a    
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/Modules'
+cd install ; make -f extlibs_makefile liblapack
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+touch fake_liblapack.a
+rm fake_liblapack.a
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+cd install ; make -f extlibs_makefile libblas
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+touch fake_libblas.a
+rm fake_libblas.a
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/install'
+( cd clib ; make TLDEPS= all || exit 1 )
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/clib'
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c customize_signals.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c stack.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c c_mkdir.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c copy.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c cptimer.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c eval_infix.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c fft_stick.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c indici.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c md5.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c md5_from_file.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c memstat.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c ptrace.c
+icc -mmic -O3 -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG  -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include  -c qsort.c
+ar ruv clib.a customize_signals.o stack.o c_mkdir.o copy.o cptimer.o eval_infix.o fft_stick.o indici.o md5.o md5_from_file.o memstat.o ptrace.o qsort.o
+ar: creating clib.a
+a - customize_signals.o
+a - stack.o
+a - c_mkdir.o
+a - copy.o
+a - cptimer.o
+a - eval_infix.o
+a - fft_stick.o
+a - indici.o
+a - md5.o
+a - md5_from_file.o
+a - memstat.o
+a - ptrace.o
+a - qsort.o
+ranlib clib.a
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/clib'
+( cd flib ; make TLDEPS= all || exit 1 )
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/flib'
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c avrec.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c atomic_number.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c bachel.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c capital.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c cryst_to_car.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c dost.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c erf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c expint.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c find_free_unit.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c flush_unit.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c functionals.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c generate_k_along_lines.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c lsda_functionals.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c more_functionals.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c has_xml.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c iglocal.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c inpfile.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c int_to_char.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c invmat.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c invmat_complex.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c latgen.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c linpack.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c metagga.f90
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [SX]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+-----------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [SC]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+---------------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [V1X]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+-------------------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [V2X]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+------------------------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [V3X]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+----------------------------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [V1C]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+--------------------------------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [V2C]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+-------------------------------------------------------------^
+metagga.f90(1392): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [V3C]
+subroutine tb09cxc(rho, grho, tau, sx, sc, v1x, v2x,v3x,v1c, v2c,v3c)
+-----------------------------------------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c matches.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c plot_io.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c radial_gradients.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c rgen.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c recips.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c remove_tot_torque.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c set_hubbard_l.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c simpsn.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c sort.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c sph_bes.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c sph_dbes.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c transto.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c trimcheck.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c test_input_file.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c date_and_tim.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c volume.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c dylmr2.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c ylmr2.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c wgauss.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c w0gauss.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c w1gauss.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c deviatoric.f90
+ar ruv flib.a avrec.o atomic_number.o bachel.o capital.o cryst_to_car.o dost.o erf.o expint.o find_free_unit.o flush_unit.o functionals.o generate_k_along_lines.o lsda_functionals.o more_functionals.o has_xml.o iglocal.o inpfile.o int_to_char.o invmat.o invmat_complex.o latgen.o linpack.o metagga.o matches.o plot_io.o radial_gradients.o rgen.o recips.o remove_tot_torque.o set_hubbard_l.o simpsn.o sort.o sph_bes.o sph_dbes.o transto.o trimcheck.o test_input_file.o date_and_tim.o volume.o dylmr2.o ylmr2.o wgauss.o w0gauss.o w1gauss.o deviatoric.o
+ar: creating flib.a
+a - avrec.o
+a - atomic_number.o
+a - bachel.o
+a - capital.o
+a - cryst_to_car.o
+a - dost.o
+a - erf.o
+a - expint.o
+a - find_free_unit.o
+a - flush_unit.o
+a - functionals.o
+a - generate_k_along_lines.o
+a - lsda_functionals.o
+a - more_functionals.o
+a - has_xml.o
+a - iglocal.o
+a - inpfile.o
+a - int_to_char.o
+a - invmat.o
+a - invmat_complex.o
+a - latgen.o
+a - linpack.o
+a - metagga.o
+a - matches.o
+a - plot_io.o
+a - radial_gradients.o
+a - rgen.o
+a - recips.o
+a - remove_tot_torque.o
+a - set_hubbard_l.o
+a - simpsn.o
+a - sort.o
+a - sph_bes.o
+a - sph_dbes.o
+a - transto.o
+a - trimcheck.o
+a - test_input_file.o
+a - date_and_tim.o
+a - volume.o
+a - dylmr2.o
+a - ylmr2.o
+a - wgauss.o
+a - w0gauss.o
+a - w1gauss.o
+a - deviatoric.o
+ranlib flib.a
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG   -I../include -I/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/include -I../iotk/src -I../Modules -I. -c distools.f90
+ar ruv ptools.a distools.o
+ar: creating ptools.a
+a - distools.o
+ranlib ptools.a
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/flib'
+if test -d CPV ; then \
+( cd CPV ; make TLDEPS= all || exit 1) ; fi
+make[1]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/CPV'
+( cd src ; make all || exit 1 )
+make[2]: Entering directory `/galileo/home/userinternal/faffinit/espresso/espresso/CPV/src'
+if test -n "" ; then \
+( cd ../.. ; make  || exit 1 ) ; fi
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c berryion.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c bforceion.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cell_nose.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c gvecw.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cg.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cp_emass.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cp_interfaces.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ions_positions.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c efield.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c energies.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ensemble_dft.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c modules.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c pres_ai_mod.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c wave_types.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c mainvar.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ortho_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c smallbox_gvec.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cg_sub.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cglib.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c wannier_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_module.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c smallbox.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c chargedensity.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ions_nose.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cp_autopilot.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ldaU_cp.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cp_restart.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cpr_mod.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c pseudo_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c spline.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c pseudopot.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cplib.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c electrons.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c electrons_nose.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c printout_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c wannier.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cpr.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ksstates.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ldaUpen.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c dealloc.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c dforceb.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c efermi.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c sic.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c eigs0.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exch_corr.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_cg.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_es.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_gs.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_pair.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_psi.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c exx_vofr.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c fft.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c forces.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c fromscra.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c gradrho.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c gram.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c gtable.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c problem_size.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c smallbox_grid.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c smallbox_subs.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c init.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c init_run.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c inner_loop_cold.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c input.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ldaU.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cpr_loop.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cplib_meta.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c metaxc.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c move_electrons.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c newd.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c nl_base.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c nlcc.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c ortho.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c phasefactor.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c plugin_initialization.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c plugin_ext_forces.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c potentials.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c print_out.f90
+print_out.f90(483): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+2949  FORMAT( I7,2X,ES12.6,4(1X,F15.8) )
+----------------------^
+print_out.f90(482): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29484 FORMAT( I7,2(2X,ES12.6),6(2X,F18.8) )
+------------------------^
+print_out.f90(481): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29483 FORMAT( I7,4(2X,ES12.6),4(2X,F18.8),2X,ES12.6,2X,F12.5 )
+------------------------^
+print_out.f90(481): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29483 FORMAT( I7,4(2X,ES12.6),4(2X,F18.8),2X,ES12.6,2X,F12.5 )
+-----------------------------------------------^
+print_out.f90(480): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29482 FORMAT( I7,4(2X,ES12.6),4(2X,F18.8),2X,ES12.6,2X,F12.5,2X,F15.8 )
+------------------------^
+print_out.f90(480): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29482 FORMAT( I7,4(2X,ES12.6),4(2X,F18.8),2X,ES12.6,2X,F12.5,2X,F15.8 )
+-----------------------------------------------^
+print_out.f90(479): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29481 FORMAT( I7,4(2X,ES12.6),4(2X,F18.8),2X,ES12.6,2X,F12.5,2(2X,F15.8) )
+------------------------^
+print_out.f90(479): remark #8291: Recommended relationship between field width 'W' and the number of fractional digits 'D' in this edit descriptor is 'W>=D+7'.
+29481 FORMAT( I7,4(2X,ES12.6),4(2X,F18.8),2X,ES12.6,2X,F12.5,2(2X,F15.8) )
+-----------------------------------------------^
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c pseudopot_sub.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c qmatrixd.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c qqberry.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c restart.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c restart_sub.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c runcp.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c smallbox_lib.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c spinsq.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c stop_run.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c stress.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c vol_clu.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c vofrho.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c wave.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c wf.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c makov_payne.f90
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c entropy.f90
+ar ruv libcp.a berryion.o bforceion.o cell_nose.o cg.o cg_sub.o cglib.o chargedensity.o cp_autopilot.o cp_emass.o cp_interfaces.o cp_restart.o cplib.o cpr_mod.o cpr.o dealloc.o dforceb.o efermi.o efield.o eigs0.o electrons.o electrons_nose.o energies.o ensemble_dft.o exch_corr.o exx_cg.o exx_es.o exx_gs.o exx_module.o exx_pair.o exx_psi.o exx_vofr.o fft.o forces.o fromscra.o gradrho.o gram.o gtable.o gvecw.o init.o init_run.o inner_loop_cold.o input.o ions_nose.o ions_positions.o ksstates.o ldaU_cp.o ldaU.o ldaUpen.o mainvar.o cpr_loop.o cplib_meta.o metaxc.o modules.o move_electrons.o newd.o nl_base.o nlcc.o ortho_base.o ortho.o phasefactor.o plugin_initialization.o plugin_ext_forces.o potentials.o pres_ai_mod.o print_out.o printout_base.o problem_size.o pseudo_base.o pseudopot.o pseudopot_sub.o qmatrixd.o qqberry.o restart.o restart_sub.o runcp.o sic.o smallbox.o smallbox_grid.o smallbox_gvec.o smallbox_subs.o smallbox_lib.o spline.o spinsq.o stop_run.o stress.o vol_clu.o vofrho.o wannier_base.o wannier.o wave.o wave_types.o wf.o makov_payne.o entropy.o
+ar: creating libcp.a
+a - berryion.o
+a - bforceion.o
+a - cell_nose.o
+a - cg.o
+a - cg_sub.o
+a - cglib.o
+a - chargedensity.o
+a - cp_autopilot.o
+a - cp_emass.o
+a - cp_interfaces.o
+a - cp_restart.o
+a - cplib.o
+a - cpr_mod.o
+a - cpr.o
+a - dealloc.o
+a - dforceb.o
+a - efermi.o
+a - efield.o
+a - eigs0.o
+a - electrons.o
+a - electrons_nose.o
+a - energies.o
+a - ensemble_dft.o
+a - exch_corr.o
+a - exx_cg.o
+a - exx_es.o
+a - exx_gs.o
+a - exx_module.o
+a - exx_pair.o
+a - exx_psi.o
+a - exx_vofr.o
+a - fft.o
+a - forces.o
+a - fromscra.o
+a - gradrho.o
+a - gram.o
+a - gtable.o
+a - gvecw.o
+a - init.o
+a - init_run.o
+a - inner_loop_cold.o
+a - input.o
+a - ions_nose.o
+a - ions_positions.o
+a - ksstates.o
+a - ldaU_cp.o
+a - ldaU.o
+a - ldaUpen.o
+a - mainvar.o
+a - cpr_loop.o
+a - cplib_meta.o
+a - metaxc.o
+a - modules.o
+a - move_electrons.o
+a - newd.o
+a - nl_base.o
+a - nlcc.o
+a - ortho_base.o
+a - ortho.o
+a - phasefactor.o
+a - plugin_initialization.o
+a - plugin_ext_forces.o
+a - potentials.o
+a - pres_ai_mod.o
+a - print_out.o
+a - printout_base.o
+a - problem_size.o
+a - pseudo_base.o
+a - pseudopot.o
+a - pseudopot_sub.o
+a - qmatrixd.o
+a - qqberry.o
+a - restart.o
+a - restart_sub.o
+a - runcp.o
+a - sic.o
+a - smallbox.o
+a - smallbox_grid.o
+a - smallbox_gvec.o
+a - smallbox_subs.o
+a - smallbox_lib.o
+a - spline.o
+a - spinsq.o
+a - stop_run.o
+a - stress.o
+a - vol_clu.o
+a - vofrho.o
+a - wannier_base.o
+a - wannier.o
+a - wave.o
+a - wave_types.o
+a - wf.o
+a - makov_payne.o
+a - entropy.o
+ranlib libcp.a
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c manycp.f90
+mpiifort -mmic -openmp -o manycp.x manycp.o \
+	libcp.a ../../Modules/libqemod.a ../../flib/ptools.a ../../flib/flib.a ../../clib/clib.a ../../iotk/src/libiotk.a -lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64   -L/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/lib/mic/ -lmkl_intel_lp64  -lmkl_intel_thread -lmkl_core   
+( cd ../../bin ; ln -fs ../CPV/src/cp.x . )
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c cprstart.f90
+mpiifort -mmic -openmp -o cp.x cprstart.o \
+	libcp.a ../../Modules/libqemod.a ../../flib/ptools.a ../../flib/flib.a ../../clib/clib.a ../../iotk/src/libiotk.a -lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64   -L/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/lib/mic/ -lmkl_intel_lp64  -lmkl_intel_thread -lmkl_core   
+( cd ../../bin ; ln -fs ../CPV/src/cp.x . )
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c fpmdpp.f90
+mpiifort -mmic -openmp -o cppp.x fpmdpp.o ../../Modules/libqemod.a ../../flib/ptools.a ../../flib/flib.a ../../clib/clib.a ../../iotk/src/libiotk.a -lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64   -L/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/lib/mic/ -lmkl_intel_lp64  -lmkl_intel_thread -lmkl_core   
+(cd ../../bin ; ln -fs ../CPV/src/cppp.x . )
+mpiifort -mmic -O2 -assume byterecl -g -traceback -openmp -nomodule -openmp -fpp -D__INTEL -D__DFTI -D__MPI -D__PARA -D__SCALAPACK -D__OPENMP -D__STICKS_DEBUG    -I../../iotk/src -I../../Modules -I. -c wfdd.f90
+mpiifort -mmic -openmp -o wfdd.x wfdd.o ../../Modules/libqemod.a ../../flib/ptools.a ../../flib/flib.a ../../clib/clib.a ../../iotk/src/libiotk.a -lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64   -L/cineca/prod/compilers/intel/cs-xe-2015/binary/mkl/lib/mic/ -lmkl_intel_lp64  -lmkl_intel_thread -lmkl_core   
+( cd ../../bin ; ln -fs ../CPV/src/wfdd.x . )
+make[2]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/CPV/src'
+make[1]: Leaving directory `/galileo/home/userinternal/faffinit/espresso/espresso/CPV'
